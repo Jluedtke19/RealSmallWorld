@@ -87,6 +87,33 @@ public class Graph {
         validateVertex(v);
         return st.get(v).size();
     }
+    
+    public double avgDegree(){
+        double total = 0;
+        for(String vertex: this.vertices()){
+            total += this.degree(vertex);
+        }
+        double average = total/this.V();
+        return average;
+    }
+    
+    public double avgPathLenght(){
+        double grandtotal = 0;
+        int counter = 0;
+        for(String vertex: this.vertices()){
+            PathFinder pf = new PathFinder(this, vertex);
+            double total =0;
+            for(String othervertex: this.vertices()){
+                if(vertex.equals(othervertex))break;
+                total += pf.distanceTo(othervertex);
+                counter++;
+            }
+            total /= (this.V() - 1);
+            grandtotal += total;
+        }
+        double average = (grandtotal/counter);
+        return average;
+    }
 
    /**
      * Add edge v-w to this graph (if it is not already an edge)
@@ -152,21 +179,65 @@ public class Graph {
         }
         return s.toString();
     }
+        private String makeName(int a) {
+        return "v" + a;
+    }
+
+    private String makeName(int row, int column) {
+        return "r" + row + "c" + column;
+    }
+
+    public void ringGraph(int r) {
+        for(int i = 0; i < r - 1; i ++){
+            this.addEdge(makeName(i), makeName(i));
+        }
+
+    }
+
+    public void gridGraph(int n) {
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n; j++) {
+                this.addEdge(makeName(i, j), makeName(i, j + 1));
+                this.addEdge(makeName(i,j), makeName(i +1,j));
+            }
+        }
+        for( int i = 0; i < n -1; i ++){
+            this.addEdge(makeName(i, n-1), makeName(i + 1, n - 1));
+        }
+        for( int i = 0; i < n -1; i ++){
+            this.addEdge(makeName(n-1, i), makeName(n-1, i+1));
+        }
+    }
 
     /**
      * Main method makes an empty graph, adds edges, and  vertexes. It prints it
      * by iterating through it and just normally printing it
      * @param args 
      */
+    public void writeDotFile(){
+        for( String u: this.vertices()){
+            for( String v: this.vertices()){
+                if((u.compareTo(v) < 0) && (this.hasEdge(u, v))){
+                    System.out.println( u + "->" + v + ";");
+                
+                }
+                }
+            }
+        }
     public static void main(String[] args) {
         Graph G = new Graph();
-        G.addEdge("A", "B");
-        G.addEdge("A", "C");
-        G.addEdge("C", "D");
-        G.addEdge("D", "E");
-        G.addEdge("D", "G");
-        G.addEdge("E", "G");
-        G.addVertex("H");
+        G.gridGraph(4);
+        System.out.println(G);
+        G.writeDotFile();
+        
+//        Graph G = new Graph();
+//        G.addEdge("A", "B");
+//        G.addEdge("A", "C");
+//        G.addEdge("C", "D");
+//        G.addEdge("D", "E");
+//        G.addEdge("D", "G");
+//        G.addEdge("E", "G");
+//        G.addVertex("H");
 
         // print out graph
         StdOut.println(G);
