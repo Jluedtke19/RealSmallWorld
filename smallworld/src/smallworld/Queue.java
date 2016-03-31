@@ -1,28 +1,14 @@
 package smallworld;
 
-/******************************************************************************
- *  Contains methods to store variables in a type of list called a queue. Has 
- * functions that allow the user to manipulate and index the list.
- *
- ******************************************************************************/
-
 import edu.princeton.cs.StdIn;
 import edu.princeton.cs.StdOut;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  The <tt>Queue</tt> class represents a first-in-first-out (FIFO)
- *  queue of generic items.
- *  It supports the usual <em>enqueue</em> and <em>dequeue</em>
- *  operations, along with methods for peeking at the top item,
- *  testing if the queue is empty, and iterating through
- *  the items in FIFO order.
- *  <p>
- *  All queue operations except iteration are constant time.
- *  <p>
- *  For additional documentation, see <a href="http://introcs.cs.princeton.edu/43stack">Section 4.3</a> of
- *  <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by Robert Sedgewick and Kevin Wayne.
+ *  The Queue class represents a first-in-first-out (FIFO)queue of generic items.
+ * Aso contains methods to store variables in a type of list called a queue. Has 
+ * functions that allow the user to manipulate and index the list.
  */
 public class Queue<Item> implements Iterable<Item> {
     private int N;         // number of elements on queue

@@ -6,16 +6,9 @@ import edu.princeton.cs.StdOut;
 import java.util.Stack;
 
 /**
- * ****************************************************************************
- * Compilation: javac PathFinder.java Execution: java Pathfinder input.txt
- * delimiter source Dependencies: Queue.java Stack.java Graph.java
- *
  * Runs breadth first search algorithm from source s on a graph G. After
  * preprocessing the graph, can process shortest path queries from s to any
  * vertex t.
- *
- * % java PathFinder routes.txt " " JFK LAX JFK ORD PHX LAX distance 3 MCO JFK
- * MCO distance 1 DFW JFK ORD DFW distance 2
  *
  *****************************************************************************
  */
