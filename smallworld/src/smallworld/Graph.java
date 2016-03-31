@@ -202,7 +202,7 @@ public class Graph {
     /**
      * Main method makes an empty graph, adds edges, and  vertexes. It prints it
      * by iterating through it and just normally printing it
-     * @param args 
+     * 
      */
     public void writeDotFile(){
         for( String u: this.vertices()){

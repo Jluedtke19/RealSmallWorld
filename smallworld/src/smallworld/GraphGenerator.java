@@ -4,9 +4,8 @@ import edu.princeton.cs.In;
 import edu.princeton.cs.StdOut;
 
 /******************************************************************************
- *  Compilation:  javac GraphGenerator.java
- *  Execution:    java GraphGenerator filename delimiter
- *  Dependencies: Graph.java In.java StdOut.java
+ *  Supplies the method to construct a graph of points that are connected to 
+ * each other.
  *
  ******************************************************************************/
 

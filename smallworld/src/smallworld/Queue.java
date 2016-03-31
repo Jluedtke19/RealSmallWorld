@@ -1,14 +1,8 @@
 package smallworld;
 
 /******************************************************************************
- *  Compilation:  javac Queue.java
- *  Execution:    java Queue < input.txt
- *  Data files:   http://algs4.cs.princeton.edu/13stacks/tobe.txt  
- *
- *  A generic queue, implemented using a linked list.
- *
- *  % java Queue < tobe.txt 
- *  to be or not to be (2 left on queue)
+ *  Contains methods to store variables in a type of list called a queue. Has 
+ * functions that allow the user to manipulate and index the list.
  *
  ******************************************************************************/
 
