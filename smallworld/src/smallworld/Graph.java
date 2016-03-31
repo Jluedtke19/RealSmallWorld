@@ -4,21 +4,11 @@ import edu.princeton.cs.In;
 import edu.princeton.cs.StdOut;
 
 /******************************************************************************
- *  Compilation:  javac Graph.java
- *  Execution:    java Graph
  *  Dependencies: ST.java SET.java In.java StdOut.java
  *  
  *  Undirected graph data type implemented using a symbol table
  *  whose keys are vertices (String) and whose values are sets
  *  of neighbors (SET of Strings).
- *
- *  Remarks
- *  -------
- *   - Parallel edges are not allowed
- *   - Self-loop are allowed
- *   - Adjacency lists store many different copies of the same
- *     String. You can use less memory by interning the strings.
- *
  ******************************************************************************/
 
 /**

@@ -26,6 +26,12 @@ public class PathFinder {
     private ST<String, String> prev = new ST<String, String>();
     private ST<String, Integer> dist = new ST<String, Integer>();
 
+    /**
+     * Runs BFS in the graph from a vertex by putting the source in a queue string
+     * then removes the vertex v from the queue and inserts it's neighbors.
+     * @param G The text file to be looked at
+     * @param s The location where the function finds to paths to
+     */
     // run BFS in graph G from given source vertex s
     public PathFinder(Graph G, String s) {
 
@@ -47,12 +53,20 @@ public class PathFinder {
             }
         }
     }
-
+/**
+ * Sees if v is reachable from the source s
+ * @param v The location to be tested
+ * @return True or false if it connects to it
+ */
     // is v reachable from the source s?
     public boolean hasPathTo(String v) {
         return dist.contains(v);
     }
-
+/**
+ * Returns the shortest path from v to s
+ * @param v The location to be tested
+ * @return The shortest path from v to s
+ */
     // return the length of the shortest path from v to s
     public int distanceTo(String v) {
         if (!hasPathTo(v)) {
@@ -60,7 +74,11 @@ public class PathFinder {
         }
         return dist.get(v);
     }
-
+/**
+ * Shortest path as an Iterable
+ * @param v The location being tested
+ * @return Distance as an Iterable
+ */
     // return the shortest path from v to s as an Iterable
     public Iterable<String> pathTo(String v) {
         Stack<String> path = new Stack<String>();
@@ -71,7 +89,10 @@ public class PathFinder {
         return path;
     }
 
-
+/**
+ * Computes the smallest distance between two places
+ * @param args Filename, delimiter, and location to go to
+ */
     public static void main(String[] args) {
         String filename = args[0];
         String delimiter = args[1];
@@ -83,10 +104,13 @@ public class PathFinder {
         String s = args[2];
         PathFinder pf = new PathFinder(G, s);
 
-        pf.report("H17");
+        pf.report("H12");
 
     } // main( String [] )
-
+/**
+ * Function to find a path to a location and gives the distance
+ * @param airport The name of the location
+ */
     private void report(String airport) {
 
         for (String v : this.pathTo(airport)) {
