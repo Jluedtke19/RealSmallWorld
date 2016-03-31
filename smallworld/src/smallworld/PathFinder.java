@@ -95,9 +95,8 @@ public class PathFinder {
         String s = args[2];
         PathFinder pf = new PathFinder(G, s);
         
-        
-        pf.report( "JFK" );
-        pf.report( "MCO" );
+        pf.report( "A17" );
+
         
     } // main( String [] )
 
