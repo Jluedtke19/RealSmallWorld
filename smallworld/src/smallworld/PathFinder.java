@@ -138,8 +138,8 @@ public class PathFinder{
         
         PathFinder pf = new PathFinder(G, PathFinder.fin);
         pf.report(pf.start);
-        PathFinder pathFinder = new PathFinder();
-        pathFinder.TextField();
+        //PathFinder pathFinder = new PathFinder();
+        //pathFinder.TextField();
     }
 
 /**
@@ -147,11 +147,7 @@ public class PathFinder{
  * @param args Filename, delimiter, and location to go to
  */
     public static void main(String[] args) {
-        String filename = args[0];
-        String delimiter = args[1];
-
         Guismall guismall = new Guismall();
-//        guismall.setPath(this);
         guismall.setVisible(true);
     } // main( String [] )
     
