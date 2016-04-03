@@ -21,51 +21,15 @@ public class PathFinder{
     private ST<String, String> prev = new ST<String, String>();
     private ST<String, Integer> dist = new ST<String, Integer>();
     
-    private JPanel p;       //Panel
-    private JFrame f;       //Frame
+    private ImageIcon map;
+    private JLabel label;
     public static String start;    //The start station
     public static String fin;   //The station going to
 
     /**
      * Put in the main method to start the process of making the panel and frame
      */
-    public PathFinder(){
-        gui();
-    }
-    /**
-     * Creates frame and a panel
-     */
-    public void gui(){
-        f = new JFrame();
-        f.setVisible(true);
-        f.setSize(600,400);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        
-        p = new JPanel();
-        p.setBackground(Color.WHITE);
-        
-        f.add(p);
-        
-    }
-    private void TextField(){
-        final JTextField start = new JTextField(6);
-        final JTextField end = new JTextField(6);
-        
-        JButton finalize = new JButton("Start");
-        finalize.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                String data = start.getText();
-                String fin = end.getText();
-            }
-        });
-        
-        p.add(start);
-        p.add(end);
-        p.add(finalize);
-        f.setVisible(true);
-        
-    }
     /**
      * Runs BFS in the graph from a vertex by putting the source in a queue string
      * then removes the vertex v from the queue and inserts it's neighbors.
@@ -134,12 +98,8 @@ public class PathFinder{
     public static void startProcess(){
         In in = new In("train.txt");
         Graph G = GraphGenerator.read(in, " ");
-//        String s = args[2];
-        
         PathFinder pf = new PathFinder(G, PathFinder.fin);
         pf.report(pf.start);
-        //PathFinder pathFinder = new PathFinder();
-        //pathFinder.TextField();
     }
 
 /**
