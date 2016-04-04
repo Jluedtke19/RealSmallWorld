@@ -6,9 +6,9 @@ The original code for the SmallWorld problem can be found [here](http://introcs.
 regarding the [Tokyo Metro Station](http://www.tokyometro.jp/en/subwaymap/pdf/routemap_en.pdf).
 
 ## Changes Made
--Added the train route txt file
--Made a simple interface
--Added javadocs
--Added a map that pops up
--Created another class to draw the graphics
--Saved sations to a ArrayList to be printed in a window
+- Added the train route txt file
+- Made a simple interface
+- Added javadocs
+- Added a map that pops up
+- Created another class to draw the graphics
+- Saved sations to a ArrayList to be printed in a window
