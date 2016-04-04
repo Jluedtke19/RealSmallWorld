@@ -1,12 +1,14 @@
 package smallworld;
 
 import edu.princeton.cs.In;
+import edu.princeton.cs.StdDraw;
 import edu.princeton.cs.StdIn;
 import edu.princeton.cs.StdOut;
 import java.util.Stack;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * Runs breadth first search algorithm from source s on a graph G. After
@@ -14,21 +16,15 @@ import java.awt.event.*;
  * vertex t.
  *
  */
-public class PathFinder{
+public class PathFinder extends JPanel{
 
     // prev[v] = previous vertex on shortest path from s to v
     // dist[v] = length of shortest path from s to v
     private ST<String, String> prev = new ST<String, String>();
     private ST<String, Integer> dist = new ST<String, Integer>();
-    
-    private ImageIcon map;
-    private JLabel label;
+    public ArrayList<String> out = new ArrayList<String>();
     public static String start;    //The start station
     public static String fin;   //The station going to
-
-    /**
-     * Put in the main method to start the process of making the panel and frame
-     */
 
     /**
      * Runs BFS in the graph from a vertex by putting the source in a queue string
@@ -100,6 +96,17 @@ public class PathFinder{
         Graph G = GraphGenerator.read(in, " ");
         PathFinder pf = new PathFinder(G, PathFinder.fin);
         pf.report(pf.start);
+        JFrame f = new JFrame("Dog");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Output o = new Output();
+//        while(true){
+//            StdDraw.clear(StdDraw.WHITE);
+//            o.draw();
+//            StdDraw.show();
+//        }
+        f.add(o);
+        f.setSize(400, 250);
+        f.setVisible(true);
     }
 
 /**
@@ -119,6 +126,7 @@ public class PathFinder{
 
         for (String v : this.pathTo(airport)) {
             StdOut.println("   " + v);
+            out.add(v);
         }
         StdOut.println("distance " + this.distanceTo(airport));
     } // report( PathFinder, String )
