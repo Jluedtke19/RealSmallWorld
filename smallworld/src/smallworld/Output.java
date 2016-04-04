@@ -18,7 +18,12 @@ public class Output extends JPanel {
 
 
         g.setColor(Color.RED);
-        for(String o: station) g.drawString(o, 25, 120);
+        int count = 10;
+        for(String o: PathFinder.out){
+            g.drawString(o, (10), (10+ count));
+            count += 20;
+            
+        }
             
         }
 

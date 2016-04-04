@@ -22,7 +22,7 @@ public class PathFinder extends JPanel{
     // dist[v] = length of shortest path from s to v
     private ST<String, String> prev = new ST<String, String>();
     private ST<String, Integer> dist = new ST<String, Integer>();
-    public ArrayList<String> out = new ArrayList<String>();
+    public static ArrayList<String> out = new ArrayList<String>();
     public static String start;    //The start station
     public static String fin;   //The station going to
 
