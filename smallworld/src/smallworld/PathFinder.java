@@ -105,7 +105,7 @@ public class PathFinder extends JPanel{
 //            StdDraw.show();
 //        }
         f.add(o);
-        f.setSize(400, 250);
+        f.setSize(500, 500);
         f.setVisible(true);
     }
 
